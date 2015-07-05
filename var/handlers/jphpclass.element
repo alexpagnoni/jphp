@@ -1,0 +1,89 @@
+<?php
+
+$element['type'] = 'jphpclass';
+$element['classname'] = 'JphpclassElement';
+$element['priority'] = 0;
+$element['site'] = false;
+
+if ( !defined( 'JPHPCLASS_ELEMENT' ) )
+{
+define( 'JPHPCLASS_ELEMENT', true );
+
+class JphpclassElement extends ModuleElement
+{
+    var $type = 'jphpclass';
+    var $site = false;
+
+    function JphpclassElement( 
+        &$ampdb, 
+        &$sitedb, 
+        $modname, 
+        $name, 
+        $file, 
+        $basedir 
+        )
+    {
+        $this->ModuleElement( $ampdb, $sitedb, $modname, $name, $file, $basedir );
+    }
+
+    function DoInstallAction(
+        $params
+        )
+    {
+        $result = false;
+
+        if ( strlen( $params['file'] ) )
+        {
+            $class_path = str_replace( '.', '/', $params['file'] ).'.php';
+            $class_dir = substr( $class_path, 0, strrpos( $class_path, '/' ) );
+            $class_name = substr( $class_path, strrpos( $class_path, '/' ) + 1 );
+
+            if ( file_exists( $this->basedir.'/var/jphp/'.$class_path ) )
+            {
+                if ( !file_exists( PRIVATE_TREE.'var/jphp/'.$class_dir ) )
+                {
+                    mkdirs( PRIVATE_TREE.'var/jphp/'.$class_dir.'/', 0755 );
+                }
+
+                $result = copy(
+                    $this->basedir.'/var/jphp/'.$class_path,
+                    PRIVATE_TREE.'var/jphp/'.$class_path
+                    );
+            }
+        }
+
+        return $result;
+    }
+
+    function DoUninstallAction(
+        $params
+        )
+    {
+        $result = false;
+
+        if ( strlen( $params['file'] ) )
+        {
+            $class_path = str_replace( '.', '/', $params['file'] ).'.php';
+            $class_dir = substr( $class_path, 0, strrpos( $class_path, '/' ) );
+            $class_name = substr( $class_path, strrpos( $class_path, '/' ) + 1 );
+
+            if ( file_exists( $this->basedir.'/var/jphp/'.$class_path ) )
+            {
+                $result = unlink( PRIVATE_TREE.'var/jphp/'.$class_path );
+            }
+        }
+
+        return $result;
+    }
+
+    function DoUpdateAction( 
+        $params
+        )
+    {
+        $result = $this->DoInstallAction( $params );
+    }
+
+}
+
+}
+?>

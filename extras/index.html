@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+</head>
+<style type="text/css">
+<!--
+   FONT, TD, BODY {
+      font-family: Verdana; font-size: 11px
+   }
+//-->
+</style>
+<body bgcolor=#ececec>
+
+<table cellpadding=4 cellspacing=1 border=0 bgcolor=#cdcdcd width=760>
+<tr>
+   <td bgcolor=#dedede>
+   JPHP Lib version 2.1 alpha RC1 : notes
+   </td>
+</tr>
+<tr>
+   <td bgcolor=#ffffff>
+   <br>
+   <dl>
+   <dd><font color=#ff0000><strong>This is an alpha relase, so take note that this version may contains bugs and miss some feature.
+   <br>
+   <br>
+   Sorry for the missing documentation, it will be available soon I hope (yes, as I'm the only member of the team actually) 
+   <br><br>
+   To learn how to use JPHP check the demo and send me some mail !
+   <br>
+   <br>
+   Due to lack of time, this relase is still in alpha stage but functionnal, use it for test only. On production, use it at your own risk.
+   <br>
+   <br>
+   Please send any comments or suggestion to : <a href="mailto:team@jphplib.org">team@jphplib.org</a>
+   </strong></font>
+   <br>
+   <br>
+   <strong>What's new in JPHP 2.1 ?</strong>
+   <ol>
+      <li>Class and package loader has been improved to get better performance and offering a nice view of the entire package tree
+      <li>Some new packages and classes appears :
+         <ol>
+            <li><strong>jphp.xml</strong> : A package dedicated to XML operation, including a DOM parser
+            <li><strong>jphp.security</strong> : contain class using for authentication system etc.
+            <li><strong>jphp.fastsql</strong> : provide a easiest way to query sql to a database
+            <li><strong>jphp.sql</strong> : if you are a v0.5b user, this package's still teh same ... new drivers and improvement will be available soon.
+            <li><strong>jphp.io</strong> : this package is dedicated to IO operation that include many classes and interfaces to base on. Exemple, now the package provide : FileReader/FileWriter, ObjectReader/ObjectWriter ...
+            <li><strong>jphp.datastructure</strong> : provide base complexe data structure to subclass depending on your need
+            <li><strong>jphp.util</strong> : some new class has been added and other has been improved : ObjectSerializer (simple class to easy serialization), Comparator (interface), Arrays (sorts etc.)
+            <li><strong>jphp.http</strong> : contains many interfaces related to http (request, session, context, cookie.
+         </ol>
+   </ol>
+   <br>
+   <br>
+   <strong>About <strong>jphp.http</strong> package :</strong>
+   <dl>
+      <dd><strong>jphp.http</strong> package you will find those classes :
+      <ol>
+         <li>Cookie : a class that represent a cookie
+         <li>UploadFile : an extension to File object to represent an file that has been uploaded via HTTP POST
+         <li>HttpContext : a simple Context manager using file, and storing object that must be share by all user 
+         <li>HttpRequest : a encapsulate http request to make more user friendly and object oriented access to http request
+         <li>HttpResponse : this class simple represent a http response providing method to add cookie using cookie object and header method
+         <li>HttpSession : a simple proprietary session manager
+      </ol>
+      <br>
+      <dd><strong>jphp.http.interface</strong> provide base interface that are use in all classes above, and you can reuse this to provide your own class :
+      <ol>
+         <li>IHttpRequest : basic interface to manipulate Request
+         <li>IHttpResponse : basic interface to manipulate Response
+         <li>IHttpContext : basic interface to manipulate Context
+         <li>IHttpSession : basic interface to manipulate Session
+      </ol>
+      <br>
+      <dd><strong>jphp.http.servlet</strong> provide an web application configuration using XML file, if you are familiar with java web.xml  config file. So this package should be very interesting as I'll use it to implement the MVC framework.
+      All classes you will find here extends from classes found in jphp.http package to add communication between Context, Session, Request and Response. 
+      <br>
+      Example, a request object should be able to create/load a session from user cookie information.
+      <br>
+      Check the demo to see how it is used
+      <br>
+      <br>
+      <strong>jphp.io</strong>, provide and easy and elegant input/output API using Reader/Writer  and FilterReader and FilterWriter interface.
+      Extends classes or interface to extends functionnality. Exemple, I've extends FilterWriter to create a ObjectWriter providing a simpleway to write many object stream into a targeted Writer object. And a ObjectReader extends the FilterReader to stream the object writed by the ObjectWriter.
+   </dl>
+   <br>
+   <strong>Installing JPHP 2.1 alpha R1 :</strong>
+   <dl>
+      <dd>1) Extract <strong>jphp.2.1.alpha-r1.zip</strong> anywhere under your document root directory.
+      <br>
+      Example, extract to your document root your will have :
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;<em>..[document_root]\jphp.2.1.alpha-r1\</em>
+      <dd>2) (run your webserver if it's not running...)
+      <dd>3) Now go to : <strong>http://127.0.0.1/jphp.2.1.alpha-r1/index.html</strong> you are readung this file :)
+      <dd>4) Now go to : <strong>http://127.0.0.1/jphp.2.1.alpha-r1/demo/</strong>, 
+      and check the available demo
+      
+   </dl>
+   </dl>
+   </td>
+</tr>
+</table>
+
+
+</body>
+</html>

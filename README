@@ -1,0 +1,69 @@
+General information
+-------------------
+
+JPHP is a simple yet powerfull Framework/Library for the popular PHP language.
+It take its inspiration from Java classe organization and hierachy. JPHP has
+those features:
+
+- Java like classes import
+- 100% Object Oriented, designed with refactoring and lots of design pattern
+- Extensible : Make use lots of Abstract/Interface like approch
+- Package library hierarchy/organisation in a Java way
+- A coding standard : easy to learn, be 100% on your project but not on the 
+  library use learning
+
+  
+
+License
+-------
+
+See the file named LICENSE.
+
+
+
+Requirements
+------------
+
+Serverside:
+	A working Ampoliros II platform installation.
+
+Clientside:
+	a web browser with HTML 4.0 and CSS support.
+
+
+
+Installation
+------------
+
+See the file named INSTALL.
+
+
+
+Additional Information
+----------------------
+
+Magellan official home page:
+	http://www.ampoliros.com/projects/web/magellan
+
+Magellan latest distribution:
+	http://www.ampoliros.com/projects/web/magellan
+
+Magellan mailing lists:
+	none at the moment
+
+Ampoliros official home page:
+	http://www.ampoliros.com
+
+To submit a bug report:
+	send an email to bugs@ampoliros.com
+
+To submit a support request:
+	send an email to support@ampoliros.com
+
+
+
+Disclaimer
+----------
+
+There is no warranty, expressed or implied, associated with this product.
+Use at your own risk.

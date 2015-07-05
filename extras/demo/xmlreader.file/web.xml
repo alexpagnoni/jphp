@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+	<display-name>Mars and Co</display-name>
+   <datasource driver="mysql">
+      <host>127.0.0.1:3306</host>
+      <user>marsdb</user>
+      <password>38u9xznj</password>
+      <database-name>MARS_DB</database-name>
+   </datasource>
+   <context>
+      <name>mars</name>
+      <store>./contextdata/</store>
+      <context-param>
+         <name>test</name>
+         <value>value</value>
+         <description>
+            description is only debugging purpose
+         </description>
+      </context-param>
+   </context>
+   <session>
+      <store>./contextdata/</store>
+      <timeout>1800</timeout>
+   </session>
+   <security-constraint>
+	   <resource auth-method='basic'>
+	      <resource-name>Protected Area</resource-name>
+	      <url-pattern>/control_servlet/*</url-pattern>
+	      <http-method>GET</http-method>
+	      <http-method>POST</http-method>
+	   </resource>
+   <security-constraint>
+      <login-config auth-method='basic'>
+         <authenticator use-class='jphp.security.BasicAuthenticator'>
+         <init-param user='dxd:nhuyeu'/>
+         </authenticator>
+      </login-config>
+   </security-constraint>
+</web-app>
+

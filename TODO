@@ -1,0 +1,19 @@
+
+                  Magellan Content Management System
+
+            http://www.ampoliros.com/projects/web/magellan
+
+
+
+                               TODO LIST
+                               =========
+
+
+
+- Multiple language templates.
+- User definable images directory in place of the default "media" one.
+- Libraries reorganization.
+- API reorganization.
+- API documentation.
+- Page generation time optimization.
+- XmlRpc methods.

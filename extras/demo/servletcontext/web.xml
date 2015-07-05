@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+	<display-name>Mars and Co</display-name>
+   <datasource id="mysql">
+      <driver>mysql</driver>
+      <host>127.0.0.1:3306</host>
+      <socket></socket>
+      <database-name>MARS_DB</database-name>
+      <user-profile name="anonymous">
+        <login>anonymous</login>
+        <password>anonymous_pwd</password>
+      </user-profile>
+      <user-profile name="operator">
+        <login>operator</login>
+        <password>operator_pwd</password>
+      </user-profile>
+      <user-profile name="administrator">
+        <login>administrator</login>
+        <password>admin_pwd</password>
+      </user-profile>
+   </datasource>
+   <datasource id="mysql2">
+      <driver>mysql</driver>
+      <host>127.0.0.1:3306</host>
+      <database-name>MARS_DB</database-name>
+      <user-profile name="anonymous">
+        <login>anonymous</login>
+        <password>anonymous_pwd</password>
+      </user-profile>
+      <user-profile name="operator">
+        <login>operator</login>
+        <password>operator_pwd</password>
+      </user-profile>
+      <user-profile name="admin">
+        <login>admin</login>
+        <password>admin_pwd</password>
+      </user-profile>
+   </datasource>
+   <request>
+      <class-manager package="jphp.http.servlet.HttpServletRequest"/>
+   </request>
+   <response>
+      <class-manager package="jphp.http.servlet.HttpServletResponse"/>
+   </response>
+   <context>
+      <class-manager package="jphp.http.servlet.HttpServletContext">
+         <class-property name="path">./contextdata/</class-property>
+      </class-manager>
+      <context-path>./contextdata/</context-path>
+      <context-name>mars</context-name>
+      <context-param>
+         <name>test</name>
+         <value>value</value>
+         <description>
+            description is only debugging purpose
+         </description>
+      </context-param>
+      <context-param>
+         <name>test2</name>
+         <value>value 2 </value>
+         <description>
+            description is only debugging purpose
+         </description>
+      </context-param>
+      <context-param>
+         <name>test 3</name>
+         <value>value 3</value>
+         <description>
+            description is only debugging purpose
+         </description>
+      </context-param>
+   </context>
+   <session>
+      <class-manager package="jphp.http.servlet.HttpServletSession">
+         <class-property name="path">./sessiondata/</class-property>
+      </class-manager>
+      <session-path>./sessiondata/</session-path>
+      <session-timeout>0</session-timeout>
+   </session>
+   <security-constraint>
+	   <resource auth-method='basic'>
+	      <resource-name>Protected Area</resource-name>
+	      <url-pattern>/jphp-project/version-2.1-build.date-17.12.2002/demo/servletcontext/</url-pattern>
+         <http-method GET="true" POST="true"/>
+	   </resource>
+   </security-constraint>
+   <login-config auth-method="basic">
+      <authenticator use-class="jphp.security.authenticator.BasicAuthenticator">
+         <class-property name="basicUser">billy</class-property>
+         <class-property name="basicPassword">coco</class-property>
+      </authenticator>
+   </login-config>
+   <login-config auth-method="basic2">
+      <authenticator use-class="jphp.security.authenticator.BasicAuthenticator">
+         <class-property name="basicUser">dxd</class-property>
+         <class-property name="basicPassword">nonono</class-property>
+      </authenticator>
+   </login-config>
+</web-app>
+
+
+
